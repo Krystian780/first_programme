@@ -1,9 +1,9 @@
-package com.company;
+package com.TradingPlatform.model;
 
 import java.util.Date;
 import java.util.Objects;
 
-public class Trade  extends AbstractContent{
+public class Trade  extends AbstractContent {
     private Double national;
     private String state;
     private String clientName;

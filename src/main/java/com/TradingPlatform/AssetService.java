@@ -1,5 +1,5 @@
-package service;
-import com.company.Asset;
+package com.TradingPlatform;
+import com.TradingPlatform.model.Asset;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 

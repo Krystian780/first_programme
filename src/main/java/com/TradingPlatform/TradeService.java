@@ -1,6 +1,5 @@
-package service;
-import com.company.Product;
-import com.company.Trade;
+package com.TradingPlatform;
+import com.TradingPlatform.model.Trade;
 
 import java.util.ArrayList;
 

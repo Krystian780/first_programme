@@ -1,4 +1,5 @@
-package com.company;
+package com.TradingPlatform.model;
+
 import java.util.Date;
 import java.util.Objects;
 public class Asset extends AbstractContent {
