@@ -8,23 +8,27 @@ public class TradeService {
 
 
     public void addTrade(Trade t) {
-        if (!trades.contains(t)) {
-            trades.add(t);
+        for(Trade x : trades){
+            if (!trades.contains(x.getId())) {
+                trades.add(t);
+            }
         }
     }
 
     public void removeTrade(Trade t){
-        if (!trades.contains(t)){
-            trades.remove(t);
+        for(Trade x : trades) {
+            if (!trades.contains(x.getId())) {
+                trades.remove(t);
+            }
         }
     }
 
-    public Trade getProducts(long id) {     // nie ma atrybutu id wiec po czym sukamy ?
-        int index = products.indexOf(new Asset(id));
-        return (index != -1) ? products.get(index) : null;
+    public Trade getProducts(String id) {
+        int index = trades.indexOf(new Trade(id));
+        return (index != -1) ? trades.get(index) : null;
     }
 }
 
 
 
-}
+

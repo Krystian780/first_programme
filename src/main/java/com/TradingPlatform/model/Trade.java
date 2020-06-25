@@ -20,4 +20,8 @@ public class Trade  extends AbstractContent {
         this.clientName = clientName;
     }
 
+    public Trade(String id){
+        super(id);
+    }
+
 }

@@ -1,5 +1,4 @@
 package com.TradingPlatform;
-import com.TradingPlatform.model.Asset;
 import com.TradingPlatform.model.Product;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
@@ -11,31 +10,29 @@ public class ProductService {
         ArrayList<Product> products = new ArrayList<>();
         int id = 0;
 
-
         public ArrayList<Product> getProducts() {
             return products;
         }
 
-        public int genereateId() {
-            return id++;
-        }
-
-
         public void addProduct(Product p) {
-            if (!products.contains(p)) {
-                products.add(p);
+            for(Product x: products) {
+                if (!products.contains(x.getId())) {
+                    products.add(p);
+                }
             }
         }
 
         public void removeProduct(Product p){
-            if (!products.contains(p)){
-                products.remove(p);
+            for(Product x: products) {
+                if (!products.contains(x.getId())){
+                    products.remove(p);
+                }
             }
         }
 
-        public Asset getProducts(long id) {     // jeśli Asset ma 2 atrybuty swoje oraz 3 atrybuty od AbstractContent to jak mogę przeszukać tabelę po ID
-            int index = products.indexOf(new Asset(id));
+        public Product getProducts(String id) {
+            int index = products.indexOf(new Product(id));
             return (index != -1) ? products.get(index) : null;
         }
     }
-}
+

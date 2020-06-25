@@ -23,4 +23,7 @@ public class Product extends AbstractContent {
         this.price = price;
     }
 
+    public Product(String id){
+        super(id);
+    }
 }

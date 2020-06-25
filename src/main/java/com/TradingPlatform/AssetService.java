@@ -19,18 +19,23 @@ public class AssetService {
 
 
     public void addAsset(Asset a) {
-        if (!assets.contains(a)) {
-            assets.add(a);
+        for(Asset id: assets){
+            if(!assets.contains(id)){
+                assets.add(a);
+            }
         }
+
     }
 
     public void removeAsset(Asset a){
-        if (!assets.contains(a)){
-            assets.remove(a);
+        for(Asset id: assets) {
+            if (!assets.contains(a)) {
+                assets.remove(a);
+            }
         }
     }
 
-    public Asset getAssets(long id) {     // jeśli Asset ma 2 atrybuty swoje oraz 3 atrybuty od AbstractContent to jak mogę przeszukać tabelę po ID
+    public Asset getAssets(String id) {
         int index = assets.indexOf(new Asset(id));
         return (index != -1) ? assets.get(index) : null;
     }
