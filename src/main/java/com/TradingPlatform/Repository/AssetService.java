@@ -1,4 +1,4 @@
-package com.TradingPlatform;
+package com.TradingPlatform.Repository;
 import com.TradingPlatform.model.Asset;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
@@ -6,32 +6,33 @@ import java.util.ArrayList;
 @Service
 public class AssetService {
     ArrayList<Asset> assets = new ArrayList<>();
-    int id = 0;
-
 
     public ArrayList<Asset> getProducts() {
         return assets;
     }
 
-    public int genereateId() {
-        return id++;
-    }
-
-
     public void addAsset(Asset a) {
-        for(Asset id: assets){
-            if(!assets.contains(id)){
-                assets.add(a);
+        boolean valid = true;
+        for(Asset x: assets) {
+            if(x.getId() == a.getId()){
+                valid = false;
             }
+        }
+        if(valid){
+            assets.add(a);
         }
 
     }
 
     public void removeAsset(Asset a){
-        for(Asset id: assets) {
-            if (!assets.contains(a)) {
-                assets.remove(a);
+        boolean valid = true;
+        for(Asset x: assets) {
+            if(x.getId() == a.getId()){
+                valid = false;
             }
+        }
+        if(valid){
+            assets.remove(a);
         }
     }
 
