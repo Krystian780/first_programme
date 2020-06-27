@@ -4,10 +4,10 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 
 @Service
-public class AssetService {
+public class AssetR {
     ArrayList<Asset> assets = new ArrayList<>();
 
-    public ArrayList<Asset> getProducts() {
+    public ArrayList<Asset> getAssets() {
         return assets;
     }
 
@@ -36,7 +36,7 @@ public class AssetService {
         }
     }
 
-    public Asset getAssets(String id) {
+    public Asset getAsset(String id) {
         int index = assets.indexOf(new Asset(id));
         return (index != -1) ? assets.get(index) : null;
     }

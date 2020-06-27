@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 public class TradeR {
     ArrayList<Trade> trades = new ArrayList<>();
-   
+
     public ArrayList<Trade> getTrades() {
         return trades;
     }
